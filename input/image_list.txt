@@ -1,0 +1,7 @@
+https://www.ruby-lang.org/images/header-ruby-logo.png
+https://rubyonrails.org/images/rails-logo.svg
+https://rspec.info/images/logo.png
+https://rspec.info/images/good_path_bad_image_name.png
+https://madeupdomainname.was/logo.png
+https://www.hellogetsafe.com/assets/images/aboutUs/getsafe_logos/getsafe_logo_2015.svg
+https://www.hellogetsafe.com/assets/images/aboutUs/getsafe_logos/getsafe_logo_2020.svg

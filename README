@@ -1,0 +1,76 @@
+ImageFetcher
+=-=-=-=-=-=-
+Author: Ian Moss - @alterisian
+
+This is an image fetcher utlity invoked from the command line.
+
+0. Usage: (from the root of application directory)
+ruby ./runner.rb "./input/image_list.txt"
+
+Parameter is a file with list of image urls, one per line.
+
+1. Dependency: Ruby 2.7.1
+A ruby version manager such as RVM or Rbenv would be useful. 
+
+rvm use 2.7.1
+rvm gemset create getsafe
+rvm gemset use getsafe
+
+2. Gems install via: 
+bundle install
+
+(If bundler not installed, then before: 
+gem install bundler)
+
+Uses the gem Down for robust filedownloading
+
+3. Test with rspec, run with:
+rspec 
+or for more verbose output:
+rspec --format documentation
+
+==================================================================
+Bugs:
+
+1 - Rspec is not picking up a raised exception with a message.
+  - replicate: rspec ./spec/image_fetcher_spec.rb:57
+
+Extensions:
+
+1 - We could have a custom application exception to capture and rethrow exceptions in a controlled manner.
+2 - We should probably version the downloads, and we could do this by having a subdirectory, with an incrementing number. This would easily allow the script to be run multiple times.
+3 - We could redirect the STDOUT to a log file under the application directory
+4 - We should continue where filenames are broken, or files are unreachable generally. 
+5 - We should save the path as part of the filename to avoid simple duplications
+6 - We should ignore same path / same files, if already downloaded.
+7 - We should create the ImageFetcher instance, and call go, in a seperate runner file
+8 - We should impose a maximum image size in Down, based on known expected file sizes.
+
+============================================================
+Challenge Backend Ruby (m/f/d) for Get Safe
+Author: Ian Moss - @alterisian
+Date: 15th September, 2020
+
+Specification: Image Fetcher
+
+To learn more about the way you develop, we have a remote assessment:
+
+Given a plaintext file containing URLs, one per line, e.g.:
+http://mywebserver.com/images/271947.jpg
+http://mywebserver.com/images/24174.jpg
+http://somewebsrv.com/img/992147.jpg
+
+Write a program with a simple command line interface that takes this plaintext file as an
+argument and downloads all images, storing them on the local hard disk.
+
+Approach the problem as you would any task in a normal day's work: 
+
+as if this code will be used in important live systems, modified later on by other developers, and so on. 
+Please specifically consider:
+- Separation of Concerns
+- Testing
+- Error handling
+
+Please use Ruby for your solution. We prefer to receive your code in GitHub.
+
+Above all: have fun
